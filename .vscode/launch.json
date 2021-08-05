@@ -1,0 +1,46 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'lolo'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=lolo",
+                    "--package=lolo"
+                ],
+                "filter": {
+                    "name": "lolo",
+                    "kind": "bin"
+                }
+            },
+            "args": ["--type", "server", "--port", "22233"],
+            //"args": ["--type", "client", "--ip" , "127.0.0.1", "--port", "22233"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'lolo'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=lolo",
+                    "--package=lolo"
+                ],
+                "filter": {
+                    "name": "lolo",
+                    "kind": "bin"
+                }
+            },
+            "args": ["--type", "server", "--port", "22233"],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
